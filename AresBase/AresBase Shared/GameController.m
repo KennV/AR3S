@@ -7,6 +7,7 @@
 //
 
 #import "GameController.h"
+#import "KVGameView.h"
 
 #if TARGET_OS_WATCH
 #import <WatchKit/WatchKit.h>
@@ -16,14 +17,20 @@
 
 @property (strong, nonatomic) SCNScene *scene;
 @property (strong, nonatomic) id <SCNSceneRenderer> sceneRenderer;
-
+// OKay so I am in the shared folder and I have , oops I just made KVGameView let me add this to the project.
+@property (strong, nonatomic) KVGameView *gameView;
 @end
 
 @implementation GameController
+@synthesize gameView = _gameView;
 #pragma mark -Powa
 /**
 As best I can figure this is where the application starts
 _obviously it is a delegate
+ 
+Dox-Wise, the GVCon in ios and osx have a pointer to here I just tagged them  with the idea to move the renderer clean out of the GUI Agan that is just a side effect. Either way I will want a KVCommonGameView or µ/Common/KVGameView
+ Now that I have it how do I make it work in the view. I mean I have to init a KVGameView acutal not the one in the
+OIC I made a initTest… and I can call it with the new API ¡Yay!
 */
 - (instancetype)initWithSceneRenderer:(id <SCNSceneRenderer>)sceneRenderer {
     self = [super init];
@@ -44,6 +51,21 @@ _obviously it is a delegate
         self.sceneRenderer.scene = scene;
     }
     return self;
+}
+/**
+Classy bit of funk
+*/
+- (instancetype)initWithTestRenderer:(id <SCNSceneRenderer>)sceneRenderer {
+  self = [super init];
+  if (!self){
+    return nil;
+  }
+  self.sceneRenderer = sceneRenderer;
+  self.sceneRenderer.delegate = self;
+  
+  // create a new scene
+  
+  return nil;
 }
 
 - (void)highlightNodesAtPoint:(CGPoint)point {

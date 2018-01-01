@@ -14,7 +14,9 @@
 
 @property (readonly) SCNView *gameView;
 @property (strong, nonatomic) GameController *gameController;
-
+/** OKAY Right, instead of - (SCNView *)gameView which is identical in both of these ocntrollers why not make this completely common havea KVCommonGameView AKA
+ self.gameController = [[GameController alloc] initWithSceneRenderer:self.gameView];
+ */
 @end
 
 @implementation GameViewController
