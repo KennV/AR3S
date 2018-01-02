@@ -15,24 +15,24 @@
 
 @interface GameController ()
 
-@property (strong, nonatomic) SCNScene *scene;
+
 @property (strong, nonatomic) id <SCNSceneRenderer> sceneRenderer;
 // OKay so I am in the shared folder and I have , oops I just made KVGameView let me add this to the project.
 //@property (strong, nonatomic) KVGameScene *gameScene;
-@property (strong, nonatomic) SCNView * aView;
-@property (strong, nonatomic) SCNScene * aScene;
-@property (strong, nonatomic) SCNNode * aNode;
-@property (strong, nonatomic) SCNNode * aCameraNode;
+
+@property (strong, nonatomic) SCNView * view;
+@property (strong, nonatomic) SCNNode * node;
+@property (strong, nonatomic) SCNNode * cameraNode;
 //@property  NSTimeInterval *aTimerInerval;
 
 @end
 
 @implementation GameController
-//@synthesize gameScene = _gameScene;
-@synthesize aView = _aView;
-@synthesize aScene = _aScene;
-@synthesize aNode = _aNode;
-@synthesize aCameraNode = _aCameraNode;
+
+@synthesize scene = _scene;
+@synthesize view = _view;
+@synthesize node = _node;
+@synthesize cameraNode = _cameraNode;
 //@synthesize aTimerInterval = _aTimerInterval;
 #pragma mark -Powa
 /**
@@ -78,7 +78,7 @@ Classy bit of funk
   // retrieve the ship node
 //  SCNNode *ship = [scene.rootNode childNodeWithName:@"ship" recursively:YES];
   //Make a fucking polygon
-  self.aScene = jScene;
+  self.scene = jScene;
   self.sceneRenderer.scene = jScene;
   return(self);
 }

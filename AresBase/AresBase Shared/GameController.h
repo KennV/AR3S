@@ -10,8 +10,8 @@
 
 
 @interface GameController : NSObject <SCNSceneRendererDelegate>
-
-@property (strong, readonly) SCNScene *scene;
+@property (strong, nonatomic) SCNScene * scene; // Ok I kill't the other scene
+//@property (strong, readonly) SCNScene *scene; whoops this is supposed to be r\o
 @property (strong, readonly) id <SCNSceneRenderer> sceneRenderer;
 
 - (instancetype)initWithSceneRenderer:(id <SCNSceneRenderer>)sceneRenderer;
