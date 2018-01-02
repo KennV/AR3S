@@ -22,8 +22,8 @@
 		38D846AC1FFAE846000220E0 /* Art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 38D8467F1FFAE846000220E0 /* Art.scnassets */; };
 		38D846AD1FFAE846000220E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38D846801FFAE846000220E0 /* Assets.xcassets */; };
 		38D846AE1FFAE846000220E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38D846801FFAE846000220E0 /* Assets.xcassets */; };
-		38DB10491FFAFB900040C9F9 /* KVGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DB10481FFAFB8F0040C9F9 /* KVGameView.m */; };
-		38DB104A1FFAFD380040C9F9 /* KVGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DB10481FFAFB8F0040C9F9 /* KVGameView.m */; };
+		38DB10491FFAFB900040C9F9 /* KVGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DB10481FFAFB8F0040C9F9 /* KVGameScene.m */; };
+		38DB104A1FFAFD380040C9F9 /* KVGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DB10481FFAFB8F0040C9F9 /* KVGameScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +48,8 @@
 		38D846A41FFAE846000220E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		38D846A61FFAE846000220E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38D846A71FFAE846000220E0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		38DB10471FFAFB8F0040C9F9 /* KVGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGameView.h; sourceTree = "<group>"; };
-		38DB10481FFAFB8F0040C9F9 /* KVGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGameView.m; sourceTree = "<group>"; };
+		38DB10471FFAFB8F0040C9F9 /* KVGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGameScene.h; sourceTree = "<group>"; };
+		38DB10481FFAFB8F0040C9F9 /* KVGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGameScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,8 +173,8 @@
 		38DB10461FFAFB8F0040C9F9 /* KVGameView */ = {
 			isa = PBXGroup;
 			children = (
-				38DB10471FFAFB8F0040C9F9 /* KVGameView.h */,
-				38DB10481FFAFB8F0040C9F9 /* KVGameView.m */,
+				38DB10471FFAFB8F0040C9F9 /* KVGameScene.h */,
+				38DB10481FFAFB8F0040C9F9 /* KVGameScene.m */,
 			);
 			path = KVGameView;
 			sourceTree = "<group>";
@@ -284,7 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38DB10491FFAFB900040C9F9 /* KVGameView.m in Sources */,
+				38DB10491FFAFB900040C9F9 /* KVGameScene.m in Sources */,
 				38D8468D1FFAE846000220E0 /* GameViewController.m in Sources */,
 				38D846A91FFAE846000220E0 /* GameController.m in Sources */,
 				38D846961FFAE846000220E0 /* main.m in Sources */,
@@ -296,7 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38DB104A1FFAFD380040C9F9 /* KVGameView.m in Sources */,
+				38DB104A1FFAFD380040C9F9 /* KVGameScene.m in Sources */,
 				38D846A21FFAE846000220E0 /* GameViewController.m in Sources */,
 				38D846AA1FFAE846000220E0 /* GameController.m in Sources */,
 				38D846A81FFAE846000220E0 /* main.m in Sources */,

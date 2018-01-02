@@ -1,6 +1,6 @@
 
 #import <SceneKit/SceneKit.h>
 
-@interface KVGameView : SCNScene
+@interface KVGameScene : SCNScene
 
 @end
