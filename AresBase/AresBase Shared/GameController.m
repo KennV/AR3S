@@ -7,7 +7,7 @@
 //
 
 #import "GameController.h"
-#import "KVGameView.h"
+//#import "KVGameScene.h"
 
 #if TARGET_OS_WATCH
 #import <WatchKit/WatchKit.h>
@@ -18,11 +18,22 @@
 @property (strong, nonatomic) SCNScene *scene;
 @property (strong, nonatomic) id <SCNSceneRenderer> sceneRenderer;
 // OKay so I am in the shared folder and I have , oops I just made KVGameView let me add this to the project.
-@property (strong, nonatomic) KVGameView *gameView;
+//@property (strong, nonatomic) KVGameScene *gameScene;
+@property (strong, nonatomic) SCNView * aView;
+@property (strong, nonatomic) SCNScene * aScene;
+@property (strong, nonatomic) SCNNode * aNode;
+@property (strong, nonatomic) SCNNode * aCameraNode;
+//@property  NSTimeInterval *aTimerInerval;
+
 @end
 
 @implementation GameController
-@synthesize gameView = _gameView;
+//@synthesize gameScene = _gameScene;
+@synthesize aView = _aView;
+@synthesize aScene = _aScene;
+@synthesize aNode = _aNode;
+@synthesize aCameraNode = _aCameraNode;
+//@synthesize aTimerInterval = _aTimerInterval;
 #pragma mark -Powa
 /**
 As best I can figure this is where the application starts
@@ -32,7 +43,7 @@ Dox-Wise, the GVCon in ios and osx have a pointer to here I just tagged them  wi
  Now that I have it how do I make it work in the view. I mean I have to init a KVGameView acutal not the one in the
 OIC I made a initTest… and I can call it with the new API ¡Yay!
 */
-- (instancetype)initWithSceneRenderer:(id <SCNSceneRenderer>)sceneRenderer {
+- (instancetype)initWithOLDSceneRenderer:(id <SCNSceneRenderer>)sceneRenderer {
     self = [super init];
     if (self) {
         self.sceneRenderer = sceneRenderer;
@@ -50,22 +61,26 @@ OIC I made a initTest… and I can call it with the new API ¡Yay!
         self.scene = scene;
         self.sceneRenderer.scene = scene;
     }
-    return self;
+    return (self);
 }
 /**
 Classy bit of funk
 */
-- (instancetype)initWithTestRenderer:(id <SCNSceneRenderer>)sceneRenderer {
+- (instancetype)initWithSceneRenderer:(id <SCNSceneRenderer>)sceneRenderer {
   self = [super init];
   if (!self){
     return nil;
   }
   self.sceneRenderer = sceneRenderer;
   self.sceneRenderer.delegate = self;
-  
-  // create a new scene
-  
-  return nil;
+
+  SCNScene *jScene = [[SCNScene alloc]init];
+  // retrieve the ship node
+//  SCNNode *ship = [scene.rootNode childNodeWithName:@"ship" recursively:YES];
+  //Make a fucking polygon
+  self.aScene = jScene;
+  self.sceneRenderer.scene = jScene;
+  return(self);
 }
 
 - (void)highlightNodesAtPoint:(CGPoint)point {
